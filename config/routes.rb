@@ -1,3 +1,10 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :api do
+    post 'user_token' => 'user_token#create'
+    resources :users, only: :create
+    get 'analyzer/index' => 'analyzer#index'
+  end
+  root 'main#index'
 end
