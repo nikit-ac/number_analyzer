@@ -1,33 +1,43 @@
-form#Signup.component
+= form_with class: 'component', id: 'Signup' do |form|
   h2 Signup Form
   .form-group
-    label for="login" Login
-    input.form-control name="login" type="text" /
+    = form.label :login
+    = form.text_field :login, class: 'form-control', id: 'signup_login'
   .form-group
-    label for="password"  Password
-    input.form-control name="password" type="password" /
+    = form.label :password
+    = form.password_field :password, class: 'form-control', id: 'signup_password'
   .form-group
-    label for="password_confirmation"  Password confirmation
-    input.form-control name="password_confirmation" type="password" /
+    = form.label :password_confirmation
+    = form.password_field :password_confirmation, class: 'form-control'
   .alert role="alert"
-  button.btn.btn-success type="submit" Signup
-  button.btn.btn-primary#btn_sign_in type="button" Sign In
+  = form.submit "Signup", class: 'btn btn-success'
+  = form.button "Sign In", class: 'btn btn-primary', id: 'btn_sign_in'
 
-
-form#Signin.component
-  h2 Signin Form
+= form_with class: 'component', id: 'Signin' do |form|
+  h2 Sign In Form
   .form-group
-    label for="login" Login
-    input.form-control name="login" type="text" /
+    = form.label :login
+    = form.text_field :login, class: 'form-control'
   .form-group
-    label for="password"  Password
-    input.form-control name="password" type="password" /
+    = form.label :password
+    = form.password_field :password, class: 'form-control'
   .alert role="alert"
-  button.btn.btn-success type="submit" Sign In
-  button.btn.btn-primary#btn_sign_up type="button" Signup
+  = form.submit "Sign In", class: 'btn btn-success'
+  = form.button "Signup", class: 'btn btn-primary', id: 'btn_sign_up'
 
-form#InputArray.component
+= form_with class: 'component', id: 'InputArray' do |form|
   h2 Enter Array
+  .form-group
+    = form.label :numbers_1
+    = form.text_field :numbers_1, class: 'form-control'
+  .form-group
+    = form.label :numbers_2
+    = form.text_field :numbers_2, class: 'form-control'
+  .alert role="alert"
+  = form.submit "Analyze", class: 'btn btn-success'
 
-#Result.component
-  h2 Results
+#Results.component
+  .card
+    .card-header Results
+    .card-body 
+      .card-text 

@@ -12,8 +12,12 @@ module Api
       if @user.save
         render json: {}, status: :created
       else
-        render json: @user.errors, status: :bad
+        render json: @user.errors, status: :bad_request
       end
+    end
+
+    def show
+      render json: { login: current_user.login }, status: :ok
     end
 
     private

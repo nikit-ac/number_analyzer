@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title TestReactRails
+    title Numbers Analyzer
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -9,6 +9,12 @@ html
     = javascript_include_tag 'jquery.cookie'
     
   body
+    nav.navbar.bg-primary
+      .navbar-brand Numbers Analyzer
+      .component#login_panel
+        span Login as:
+        span#js-login
+        button#logout.btn.btn-outline-light Logout
     .container
       == yield 
     
