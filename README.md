@@ -1,24 +1,9 @@
-# README
+To start the application, enter the following commands in the terminal in the application directory:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Run application:
+bundle exec rails server
 
-Things you may want to cover:
+# Create database:
+bundle exec rake db:migrate
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+After that, the test data application will be available at localhost:3000
